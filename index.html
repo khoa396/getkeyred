@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
+<script>
+  // Danh sách các domain của Link4m (cần điền đúng và đủ)
+  // Lưu ý: Link4m có thể dùng nhiều domain phụ, bạn cần check kỹ
+  const allowedDomains = ["link4m.com", "link4m.co", "link4m.net"];
+  
+  // Lấy địa chỉ trang web trước đó (Referrer)
+  const referrer = document.referrer;
+  
+  let isAllowed = false;
+  
+  // Kiểm tra xem referrer có chứa domain của Link4m không
+  if (referrer) {
+    for (const domain of allowedDomains) {
+      if (referrer.includes(domain)) {
+        isAllowed = true;
+        break;
+      }
+    }
+  }
+
+  // Mẹo bảo mật bổ sung: Kiểm tra thêm "Secret Key" trên URL
+  // Ví dụ link bạn rút gọn trên Link4m là: your-site.vercel.app/?pass=123
+  const urlParams = new URLSearchParams(window.location.search);
+  const secretPass = urlParams.get('pass');
+
+  // Điều kiện: Phải có Referer hợp lệ HOẶC có mã bí mật đúng
+  // (Bạn có thể bắt buộc cả 2 nếu muốn chặt chẽ hơn: isAllowed && secretPass === '123')
+  if (!isAllowed && secretPass !== 'M4_BAO_MAT_CUA_BAN') { 
+    // Nếu không hợp lệ, chuyển hướng đi chỗ khác ngay
+    alert("Vui lòng truy cập qua Link4m để lấy key!");
+    window.location.href = "https://google.com"; 
+  }
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,3 +58,4 @@
     <iframe src="https://keyauth.click/get/android/index.php" title="Get Key Frame"></iframe>
 </body>
 </html>
+
