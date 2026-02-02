@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HỆ THỐNG GET KEY</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/scripts/jsd/62863065d6c4/main.js" async defer></script>
+    <title>GET KEY SYSTEM</title>
+    <style>
+        /* CSS để Iframe tràn màn hình, trông như trang thật */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
-<body class="bg-light">
-<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
-        <h4 class="text-center mb-3">GET KEY TRUNG GIAN</h4>
-        
-        <form method="POST" action="/">
-            <div class="mb-3">
-                <label for="option" class="form-label">Chọn loại Key/License</label>
-                <select class="form-select" id="option" name="option" required>
-                    <option value="1">1 Giờ</option>
-                    <option value="8">8 Giờ - Việt Nam</option>
-                    <option value="20">20 Giờ - Việt Nam</option>
-                    <option value="8I">8 Giờ - Quốc Tế</option>
-                    <option value="20I">20 Giờ - Quốc Tế</option>
-                </select>
-            </div>
-
-            <div class="mb-3 d-flex justify-content-center">
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAABtRjuL7XwJVmrTR"></div>
-            </div>
-            
-            <p class="small text-muted text-center">Lưu ý: Server Việt Nam cần bật VPN.</p>
-            <button type="submit" class="btn btn-primary w-100">LẤY KEY NGAY</button>
-        </form>
-    </div>
-</div>
+<body>
+    <iframe src="https://keyauth.click/get/android/index.php" title="Get Key Frame"></iframe>
 </body>
 </html>
